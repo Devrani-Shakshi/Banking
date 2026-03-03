@@ -1,0 +1,7 @@
+ <button 
+      [type]="type" 
+      [ngClass]="['base-btn', variant]" 
+      [disabled]="disabled"
+      (click)="onClick.emit($event)">
+      <ng-content></ng-content> <!-- This allows passing text/icons inside the tag -->
+    </button>

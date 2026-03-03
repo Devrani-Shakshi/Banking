@@ -1,0 +1,42 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="login-header">
+      <h2>BankApi Login</h2>
+      <p>Secure Access to Your Account</p>
+    </div>
+
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="loginData.email" 
+          required 
+          placeholder="admin@test.com"
+          class="form-input">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          [(ngModel)]="loginData.password" 
+          required 
+          placeholder="••••••••"
+          class="form-input">
+      </div>
+
+      <button type="submit" class="login-btn" [disabled]="!loginForm.valid">
+        Login Now
+      </button>
+
+      <div class="login-footer">
+        <p>Test with: <strong>admin@test.com</strong> or <strong>user@test.com</strong></p>
+      </div>
+    </form>
+  </div>
+</div>

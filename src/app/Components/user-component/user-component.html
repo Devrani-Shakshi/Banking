@@ -1,0 +1,49 @@
+<div class="loan-card shadow">
+  <div class="card-header bg-primary text-white">
+    <h2><i class="fas fa-hand-holding-usd"></i> Fast-Track Personal Loan</h2>
+    <p>Get funds in your account within seconds!</p>
+  </div>
+
+  <div class="card-body">
+    <div class="info-box mb-4">
+      <h5>Current Interest Rate:  5.5% <span class="badge badge-success">5.5 % p.a.</span></h5>
+    </div>
+
+    <div class="form-group">
+      <label>How much do you need?</label>
+      <div class="input-group">
+        <span class="input-group-text">$</span>
+        <input type="number" class="form-control form-control-lg" [(ngModel)]="loanAmount" step="100">
+      </div>
+      <input type="range" class="form-range mt-2" min="1000" max="50000" [(ngModel)]="loanAmount">
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6 emi-box">
+        <small>Estimated Monthly EMI</small>
+        <h4>${{ monthlyPayment | number:'1.2-2' }}</h4>
+      </div>
+      <div class="col-md-6 emi-box border-start">
+        <small>Repayment Period</small>
+        <h4>{{ tenureMonths }} Months</h4>
+      </div>
+    </div>
+
+    <div class="terms-section mt-4">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="isAgreed" id="terms">
+        <label class="form-check-label" for="terms">
+          I agree to the Digital Loan Agreement and automatic repayments.
+        </label>
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-block btn-lg mt-4 w-100" (click)="confirmLoan()">
+      APPROVE & DEPOSIT FUNDS
+    </button>
+  </div>
+
+  <div class="card-footer text-muted text-center">
+    <small><i class="fas fa-lock"></i> Secured by BankAPI 256-bit Encryption</small>
+  </div>
+</div>

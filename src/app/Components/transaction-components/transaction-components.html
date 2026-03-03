@@ -1,0 +1,35 @@
+<div class="bank-container">
+  <h2>Current Balance: ${{ balance | number:'1.2-2' }}</h2>
+
+  <div class="transaction-form">
+    <h3>New Transaction</h3>
+    <input type="text" [(ngModel)]="newTx.description" placeholder="Description">
+    <input type="number" [(ngModel)]="newTx.amount" placeholder="Amount">
+    
+    <select [(ngModel)]="newTx.type">
+      <option value="Credit">Deposit (Credit)</option>
+      <option value="Debit">Withdraw (Debit)</option>
+    </select>
+
+    <button (click)="submitTransaction()">Submit</button>
+  </div>
+
+  <hr>
+
+  <h3>Transaction History</h3>
+  <!-- <table>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Amount</th>
+    </tr>
+    <tr *ngFor="let item of history">
+      <td>{{ item.transactionDate | date:'short' }}</td>
+      <td>{{ item.description }}</td>
+      <td [style.color]="item.type === 'Credit' ? 'green' : 'red'">{{ item.type }}</td>
+      <td>${{ item.amount }}</td>
+    </tr>
+  </table>
+</div> -->
+<app-table></app-table>

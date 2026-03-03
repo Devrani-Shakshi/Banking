@@ -1,0 +1,38 @@
+.loan-card {
+  max-width: 550px;
+  margin: 40px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-header {
+  padding: 30px;
+  text-align: center;
+}
+
+.card-body { padding: 40px; }
+
+.emi-box {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.form-range::-webkit-slider-thumb { background: #007bff; }
+
+.btn-primary {
+  background: #007bff;
+  border: none;
+  font-weight: bold;
+  padding: 15px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}

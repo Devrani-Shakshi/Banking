@@ -1,0 +1,28 @@
+    .base-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Variants */
+    .primary { background: #1e3c72; color: white; border-color: #1e3c72; }
+    .primary:hover { background: #2a5298; }
+
+    .outline { background: transparent; color: #1e3c72; border-color: #1e3c72; }
+    .outline:hover { background: #1e3c72; color: white; }
+
+    .admin { background: #fff9db; color: #856404; border-color: #ffd700; }
+    .admin:hover { background: #ffd700; color: black; }
+
+    .danger { background: #ffebee; color: #c62828; border-color: #c62828; }
+    .danger:hover { background: #c62828; color: white; }
+
+    button:disabled { opacity: 0.5; cursor: not-allowed; }

@@ -1,0 +1,16 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+
+.error-container {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+}
+h1 { font-size: 4rem; }
+a { text-decoration: none; padding: 10px; }

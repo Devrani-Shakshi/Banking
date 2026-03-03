@@ -1,0 +1,128 @@
+
+<div class="dashboard-wrapper">
+  <!-- Welcome Section -->
+  <header class="dashboard-header">
+    <div class="welcome-text">
+      <h1>Welcome back, {{ auth.currentUser()?.email }}!</h1>
+      <p>Here is what's happening with your account today.</p>
+    </div>
+    <div class="status-badge" [class.admin]="auth.getUserRole() === 'admin'">
+      {{ auth.getUserRole() | uppercase }} ACCOUNT
+    </div>
+  </header>
+
+  <!-- Stats Grid -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="icon-circle blue"><i class="bi bi-wallet2"></i></div>
+      <div class="stat-info">
+        <h3>$24,500.00</h3>
+        <p>Total Balance</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon-circle green"><i class="bi bi-arrow-up-right"></i></div>
+      <div class="stat-info">
+        <h3>$1,200.50</h3>
+        <p>Monthly Income</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon-circle red"><i class="bi bi-arrow-down-left"></i></div>
+      <div class="stat-info">
+        <h3>$850.20</h3>
+        <p>Monthly Expenses</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Role-Based Content -->
+  <div class="content-grid">
+
+      @if (auth.hasRole('user')) {
+           <app-table> </app-table>
+    }
+    @else {
+         <!-- Recent Transactions (Shared) -->
+     <div class="data-section">
+      <div class="section-header">
+        <h2>Recent Transactions</h2>
+        <button class="view-all">View All</button>
+      </div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>02 Mar 2026</td>
+            <td>Amazon Marketplace</td>
+            <td><span class="badge debit">Debit</span></td>
+            <td class="neg">-$120.00</td>
+          </tr>
+          <tr>
+            <td>01 Mar 2026</td>
+            <td>Salary Deposit</td>
+            <td><span class="badge credit">Credit</span></td>
+            <td class="pos">+$3,000.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> 
+    }
+   
+
+   
+    <!-- Quick Actions (Role Based) -->
+    <!-- <div class="action-section">
+      <h2>Quick Actions</h2>
+      <div class="action-buttons">
+        <button class="action-btn">Transfer Money</button>
+        <button class="action-btn">Pay Bills</button>
+        
+    Only Admin sees this inside the common dashboard 
+        @if (auth.hasRole('admin')) {
+          <button class="action-btn admin-only" routerLink="/admin-panel">
+            Manage Users
+          </button>
+          <button class="action-btn admin-only">Generate System Report</button>
+        }
+      </div>
+    </div> -->
+
+    <div class="action-section">
+  <h2>Quick Actions</h2>
+  <div class="action-buttons">
+    
+    <!-- Using Reusable Component -->
+    <app-actionbutton variant="outline" (onClick)="doTransfer()">
+      Transfer Money
+    </app-actionbutton >
+
+    <app-actionbutton  variant="outline">
+      Pay Bills
+    </app-actionbutton >
+    
+    <!-- Admin Only Action -->
+    @if (auth.hasRole('admin')) {
+      <app-actionbutton variant="admin" (onClick)="goToAdmin()">
+        Manage Users
+      </app-actionbutton >
+    }
+
+    <app-actionbutton  variant="danger" (onClick)="auth.logout()">
+      Logout
+    </app-actionbutton >
+
+  </div>
+</div>
+
+  </div>
+</div>

@@ -1,0 +1,6 @@
+.bank-container { padding: 20px; font-family: sans-serif; }
+.transaction-form { background: #f4f4f4; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+input, select, button { display: block; margin: 10px 0; padding: 8px; width: 250px; }
+button { background: #007bff; color: white; border: none; cursor: pointer; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }

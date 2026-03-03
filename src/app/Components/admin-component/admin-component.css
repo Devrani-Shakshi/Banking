@@ -1,0 +1,24 @@
+.container { max-width: 900px; }
+.card { border-radius: 15px; overflow: hidden; }
+.badge { padding: 8px 12px; border-radius: 20px; font-weight: 500; }
+.btn-outline-info:hover { color: white; }
+tr { transition: 0.3s; vertical-align: middle; }
+tr:hover { background-color: #f8f9fa; }
+/* Custom Soft Badges */
+.bg-primary-soft { background-color: #e0e7ff; color: #4338ca; }
+.bg-danger-soft { background-color: #fee2e2; color: #b91c1c; }
+.bg-soft-primary { background-color: #f0f4ff; }
+
+/* Buttons */
+.btn-icon { width: 32px; height: 32px; padding: 0; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; transition: 0.2s; border: 1px solid #eee; }
+.btn-icon:hover { transform: scale(1.1); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+/* Card & Table */
+.card { border-radius: 12px; }
+.table thead th { font-weight: 600; font-size: 0.8rem; border-top: none; }
+tr { transition: background 0.2s; }
+tr:hover { background-color: #fbfcfe; }
+
+/* Inputs */
+.form-control:focus, .form-select:focus { box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15); border-color: #0d6efd; }
+
